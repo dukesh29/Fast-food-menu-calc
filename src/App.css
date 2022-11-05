@@ -1,27 +1,46 @@
+body{
+    background: url("./assets/bg.png");
+}
+
 .App {
+    background: linear-gradient(to bottom, #f5eded, #e9e4f0);
+    border-radius: 20px;
     margin: 20px auto 0 auto;
-    width: 1200px;
+    max-width: 1200px;
     display: flex;
     justify-content: space-around;
 }
 
+legend{
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
 .items-block {
     display: flex;
-    gap: 5px;
+    gap: 20px;
     flex-wrap: wrap;
-    justify-content: space-between;
-    flex-basis: 60%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 20px;
 }
 
 .items-block button {
-    width: 200px;
-    height: 50px;
-    padding: 5px 17px 0 0;
+    min-width: 200px;
+    height: 64px;
+    padding: 14px 17px 0 0;
     background-size: 35%;
     border-radius: 15px 50px 30px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+.items-block button p {
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 2px;
 }
 
 .items-block button:hover {
@@ -60,10 +79,57 @@
     background: url("./assets/salad.jpg") no-repeat left center;
 }
 
-.noorder-block {
-    display: block;
+.Water {
+    background: url("./assets/water.jpeg") no-repeat left center;
 }
 
-.invisible {
+.order-block {
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: bold;
+    padding-top: 20px;
+    border-radius: 20px;
+}
+
+.order-block button {
+    width: 30px;
+    height: 30px;
+    color: black;
+    border-radius: 5px;
+    background: url("./assets/icons8-trash-48.png") no-repeat center center;
+    background-size: 100%;
+}
+
+.order-block button:hover{
+    background: url("./assets/icons8-trash-50.png") no-repeat center center;
+    background-size: 100%;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    align-items: center;
+    gap: 10px;
+}
+
+.total-block{
+    text-align: center;
+    font-size: 22px;
+}
+
+.noOrderHide {
     display: none;
 }
+
+.text-info {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+
+
+

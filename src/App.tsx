@@ -1,8 +1,9 @@
 import React, {useMemo, useState} from 'react';
-import './App.css'
 import Menu from "./components/Menu/Menu";
 import Order from "./components/Order/Order";
 import Total from "./components/Total/Total";
+import NoOrder from "./components/NoOrder/NoOrder";
+import './App.css'
 
 function App() {
 
@@ -12,9 +13,10 @@ function App() {
     {name: 'Shaurma', price: 160, count: 0, id: 3},
     {name: 'Fries', price: 50, count: 0, id: 4},
     {name: 'Cola', price: 40, count: 0, id: 5},
-    {name: 'Tea', price: 20, count: 0, id: 6},
+    {name: 'Tea', price: 30, count: 0, id: 6},
     {name: 'Coffee', price: 80, count: 0, id: 7},
     {name: 'Salad', price: 70, count: 0, id: 8},
+    {name: 'Water', price: 10, count: 0, id: 9},
   ]);
 
   const addOrder = (id: number) => {
@@ -25,7 +27,6 @@ function App() {
       } : order;
     }));
   };
-
 
   const menuList = orders.map(order => {
     return (
@@ -57,6 +58,7 @@ function App() {
       } : order;
     }))
   };
+
   const orderList = orders.map(order => {
     return order.count !== 0 ? (
       <Order
@@ -68,12 +70,29 @@ function App() {
     ) : '';
   });
 
+  const noOrderDiv = () => {
+    if (getTotalPrice > 0) {
+      return 'noOrderHide';
+    } else {
+      return '';
+    }
+  };
+
+  const TotalDiv = () => {
+    if (getTotalPrice <= 0) {
+      return 'noOrderHide';
+    } else {
+      return 'total-block';
+    }
+  };
+
   return (
     <div className="App">
       <fieldset className="order-block">
         <legend>Order</legend>
+        <NoOrder classnameNoOrder={noOrderDiv()}/>
         {orderList}
-        <Total getTotalPrice={getTotalPrice}/>
+        <Total getTotalPrice={getTotalPrice} totalClassname={TotalDiv()}/>
       </fieldset>
       <fieldset className="items-block">
         <legend>Menu</legend>

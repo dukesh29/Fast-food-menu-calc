@@ -9,9 +9,10 @@ interface OrderList {
 
 const Order: React.FC<OrderList> = ({name, count, priceForOne, deleteBtn}) => {
   return (
-    <div>
-      {name} x{count} {priceForOne} KGS
-      <button type="button" onClick={deleteBtn}>X</button>
+    <div className="order-item">
+      <div className="text-info">
+        <span style={{textDecoration:'underline'}}>{name}</span><span>x{count} {priceForOne} KGS</span></div>
+      <button type="button" onClick={deleteBtn}></button>
     </div>
   );
 };

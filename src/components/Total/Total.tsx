@@ -2,13 +2,12 @@ import React from 'react';
 
 interface totalPrice {
   getTotalPrice:number;
+  totalClassname:string;
 }
 
-const Total:React.FC<totalPrice> = ({getTotalPrice}) => {
+const Total:React.FC<totalPrice> = ({getTotalPrice,totalClassname}) => {
   return (
-    <div>
-      <div><strong>Total Price:{getTotalPrice}</strong></div>
-    </div>
+      <div className={totalClassname}><strong>Total price: {getTotalPrice} KGS</strong></div>
   );
 };
 
