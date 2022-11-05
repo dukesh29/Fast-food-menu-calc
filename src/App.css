@@ -1,4 +1,69 @@
 .App {
     margin: 20px auto 0 auto;
+    width: 1200px;
     display: flex;
+    justify-content: space-around;
+}
+
+.items-block {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: 60%;
+}
+
+.items-block button {
+    width: 200px;
+    height: 50px;
+    padding: 5px 17px 0 0;
+    background-size: 35%;
+    border-radius: 15px 50px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.items-block button:hover {
+    background-color: black;
+    color: white;
+}
+
+.items-block button p, .items-block button h3 {
+    margin: 0;
+}
+
+.Hamburger {
+    background: url("./assets/burger.jpg") no-repeat left center;
+}
+
+.Cheeseburger {
+    background: url("./assets/cheeseburger.jpg") no-repeat left center;
+}
+
+.Shaurma {
+    background: url("./assets/shawerma.jpg") no-repeat left center;
+}
+.Fries {
+    background: url("./assets/fries.jpg") no-repeat left center;
+}
+.Cola {
+    background: url("./assets/cola.jpg") no-repeat left center;
+}
+.Tea {
+    background: url("./assets/tea.jpg") no-repeat left center;
+}
+.Coffee {
+    background: url("./assets/coffee.jpg") no-repeat left center;
+}
+.Salad {
+    background: url("./assets/salad.jpg") no-repeat left center;
+}
+
+.noorder-block {
+    display: block;
+}
+
+.invisible {
+    display: none;
 }
